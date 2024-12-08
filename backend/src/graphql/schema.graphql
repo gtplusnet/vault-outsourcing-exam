@@ -7,11 +7,18 @@ type Lead {
   services: [String!]!
 }
 
+type ServiceCounts {
+  delivery: Int!
+  pickup: Int!
+  payment: Int!
+}
+
 type Query {
   leads: [Lead!]!
   lead(id: ID!): Lead
+  serviceCounts: ServiceCounts!
 }
 
 type Mutation {
-  register(name: String!, email: String!, mobile: String!, services: [String!]!, postcode: String!): Lead!
+  register(name: String!, email: String!, mobile: String!, postcode: String!, services: [String!]!): Lead!
 }

@@ -8,4 +8,17 @@ export const Query = {
   lead: async (_: any, { id }: { id: number }) => {
     return prisma.lead.findUnique({ where: { id } });
   },
+  serviceCounts: async () => {
+    const deliveryCount = await prisma.lead.count({
+      where: { services: { has: 'DELIVERY' } },
+    });
+    const pickupCount = await prisma.lead.count({
+      where: { services: { has: 'PICKUP' } },
+    });
+    const paymentCount = await prisma.lead.count({
+      where: { services: { has: 'PAYMENT' } },
+    });
+
+    return { delivery: deliveryCount, pickup: pickupCount, payment: paymentCount };
+  },
 };

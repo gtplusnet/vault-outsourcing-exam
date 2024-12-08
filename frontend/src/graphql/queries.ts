@@ -12,3 +12,13 @@ export const GET_LEADS = gql`
     }
   }
 `;
+
+export const GET_SERVICE_COUNTS = gql`
+  query GetServiceCounts {
+    serviceCounts {
+      delivery
+      pickup
+      payment
+    }
+  }
+`;
