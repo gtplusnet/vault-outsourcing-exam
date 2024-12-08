@@ -7,6 +7,7 @@ export const GET_LEADS = gql`
       name
       email
       mobile
+      postcode
       services
     }
   }

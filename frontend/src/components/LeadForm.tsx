@@ -9,6 +9,7 @@ const LeadForm: React.FC = () => {
         name: '',
         email: '',
         mobile: '',
+        postcode: '',
         service: '', // Change to a single string for radio buttons
     });
     const [open, setOpen] = useState(false); // State for Snackbar
@@ -37,6 +38,7 @@ const LeadForm: React.FC = () => {
                 email: '',
                 mobile: '',
                 service: '',
+                postcode: '',
             });
             setOpen(true); // Show Snackbar on success
         } catch (error) {
@@ -74,6 +76,16 @@ const LeadForm: React.FC = () => {
                 margin="normal"
                 required
             />
+            <TextField
+                label="Postcode"
+                name="postcode"
+                value={formState.postcode}
+                onChange={handleChange}
+                fullWidth
+                margin="normal"
+                required
+            />
+
             <TextField
                 label="Mobile"
                 name="mobile"

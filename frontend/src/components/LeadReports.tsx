@@ -23,7 +23,7 @@ const LeadReports: React.FC = () => {
         {data?.leads.map((lead) => (
           <ListItem key={lead.id}>
             <ListItemText
-              primary={`${lead.name} - ${lead.email} - ${lead.mobile}`}
+              primary={`${lead.name} - ${lead.email} - ${lead.mobile} - ${lead.postcode}`}
               secondary={`Services: ${lead.services.join(', ')}`}
             />
           </ListItem>
